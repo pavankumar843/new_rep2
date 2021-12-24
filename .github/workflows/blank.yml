@@ -52,7 +52,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - name: set the variables
-       run: echo "MESSAGE=${{ inputs.text_to_print }}"
+       run: echo "MESSAGE=${{ inputs.text_to_print }}" >> $GITHUB_ENV
        
      - name: print some text
        run: echo "$MESSAGE"
