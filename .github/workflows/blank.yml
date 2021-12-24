@@ -18,6 +18,10 @@ on:
       type: string
       required: true
       default: "default value"
+     text_to_print:
+      description: 'what to print'
+      required: true
+      default: 'Defautl message'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -44,3 +48,12 @@ jobs:
       - name: Step to test input value
         run: |
            echo "Testing input value ${{ github.event.inputs.param_level }}"
+  print_text:
+    runs-on: ubuntu-latest
+    steps:
+     - name: set the variables
+       run: echo "MESSAGE=${{ inputs.text_to_print }}"
+       
+     - name: print some text
+       run: echo "$MESSAGE"
+    
