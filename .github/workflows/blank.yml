@@ -42,4 +42,4 @@ jobs:
           
       - name: Step to test input value
         run: |
-           echo Testing input value ${{ github.event.inputs.param_level }}
+           echo "Testing input value ${{ github.event.inputs.param_level }}"
